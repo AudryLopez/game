@@ -1,9 +1,10 @@
+import Rules from './components/rules/rules'
 import './App.css'
 
 function App() {
 
   return (
-    <h1>Hola</h1>
+    <Rules/>
   )
 }
 
