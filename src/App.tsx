@@ -1,10 +1,10 @@
-import Rules from './components/rules/rules'
+import Game from "./components/game/game"
 import './App.css'
 
 function App() {
 
   return (
-    <Rules/>
+    <Game/>
   )
 }
 
