@@ -8,11 +8,25 @@
     flex-direction: column;
 }
 
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
 .title {
-    color: hsl(229, 25%, 31%);
-    padding: 25px;
-    font-size: 36px;
-    font-weight:bolder;
+  color: hsl(229, 25%, 31%);
+  padding: 20px;
+  font-size: 28px;
+  font-weight:bolder;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 25px;
+  cursor: pointer;
 }
 
 .rules {
@@ -22,5 +36,5 @@
 
 .img {
   margin: auto 0;
-  width: 80%;
+  width: 85%;
 }
