@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./game"
+import  "./game.css"
 import Rules from "../rules/rules";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Game(){
     const [Open, closed] = useState(true);
 
     return(
-        <div>{!Open ? <Rules closed={closed}/> : <button className="mybutton" onClick={()=>{closed(false)}}>RULES</button>}</div>
+        <div>{!Open ? <Rules closed={closed}/> : <button className="button" onClick={()=>{closed(false)}}>RULES</button>}</div>
     )
 }
