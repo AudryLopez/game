@@ -4,9 +4,19 @@ import Rules from "../rules/rules";
 import { useState } from "react";
 
 export default function Game(){
-    const [Open, closed] = useState(true);
+    const [visible, invisible] = useState(true);
 
     return(
-        <div>{!Open ? <Rules closed={closed}/> : <button className="button" onClick={()=>{closed(false)}}>RULES</button>}</div>
+        <section className="main">
+          <header className="main header">
+            <div className="image" ></div>
+            <div className="score-card">
+              <header className="title"></header>
+              <footer className="score"></footer>
+            </div>
+          </header>
+          <Rules visible={visible} invisible={invisible}/> 
+          <div> <button className="button" onClick={()=>{invisible(true)}}>RULES</button></div>
+        </section>
     )
 }

@@ -9,3 +9,17 @@
     cursor: pointer;
     font-weight:600;
 }
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.main .header{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.image {
+    background-color: white;
+}
