@@ -1,10 +1,10 @@
-import Game from "./components/game/game"
+import Header from "./components/header/header"
 import './App.css'
 
 function App() {
 
   return (
-    <Game/>
+    <Header/>
   )
 }
 
