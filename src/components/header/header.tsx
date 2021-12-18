@@ -1,9 +1,10 @@
 import "./header.css";
+import title from "../../images/logo.svg"
 
 export default function Header(){
     return (
-      <header className="main header">
-        <div className="image"></div>
+      <header className="header">
+        <img className="image" src={title}/>
         <div className="score-card">
           <header className="title"></header>
           <footer className="score"></footer>
