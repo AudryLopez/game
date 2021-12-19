@@ -11,6 +11,7 @@ export default function Game(){
       <section className="main">
         <Header/>
         <div className="pop"><Rules  visible={visible} invisible={invisible}/></div>
+        <section className="game"></section>
         <button className="button" onClick={()=>{invisible(true)}}>RULES</button>
       </section>
     )
