@@ -1,4 +1,4 @@
-.header{
+.head{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,7 +26,7 @@
   background-color: white;
 }
 
-.title {
+.header-title {
   margin: auto;
   font-weight: bolder;
   color: rgb(22, 16, 124);
