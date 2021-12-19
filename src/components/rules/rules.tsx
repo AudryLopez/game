@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./rules.css";
 import close from "../../images/icon-close.svg";
 import rules from "../../images/image-rules.svg";
