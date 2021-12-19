@@ -1,16 +1,37 @@
-.button {
-    color:white;
-    background-color: transparent;
-    border-radius: 10px;
-    border: 1px solid white;
-    width: 115px;
-    height: 40px;
-    font-size: 14px;
-    cursor: pointer;
-    font-weight:600;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  min-height: 610px;
+  min-width: 100%;
 }
 
-.main {
-    display: flex;
-    flex-direction: column;
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circle.rock {
+  border: 20px solid hsl(349, 71%, 52%);
+}
+
+.circle.paper {
+  border: 20px solid hsl(230, 89%, 62%); 
+}
+
+.circle.scissors {
+  border: 20px solid hsl(39, 89%, 49%);  
+}
+
+.icons {
+  height: 80px;
+  width: 80px;
 }

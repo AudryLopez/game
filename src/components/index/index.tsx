@@ -1,17 +1,18 @@
 import React from "react";
 import Header from "../header/header";
 import Rules from "../rules/rules";
+import Game from "../game/game";
 import { useState } from "react";
 import "./index.css";
 
-export default function Game(){
+export default function index(){
     const [visible, invisible] = useState(true);
 
     return(
       <section className="main">
         <Header/>
-        <Rules  visible={visible} invisible={invisible}/>
-        <section className="game"></section>
+        <Game/>
+        <Rules visible={visible} invisible={invisible}/>
         <button className="button" onClick={()=>{invisible(true)}}>RULES</button>
       </section>
     )
