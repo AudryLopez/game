@@ -7,19 +7,39 @@ import scissors from "../../images/icon-scissors.svg";
 
 export default function Game(){
   const [score, setscore] = useState(0);
-  const [result, setresult] = useState();
+  const [result, setresult] = useState<string>();
+  const [select, setselect] = useState<string>();
+  const options = ["paper", "scissors", "rock"];
+
+
+  useEffect(()=>{
+
+  })
 
   return(
     <section className="container">
-      <div className="circle paper">
-        <img className="icons" src={paper} alt="paper" />
-      </div>
-      <div className="circle scissors">
-        <img className="icons" src={scissors} alt="scissors" />
-      </div>
-      <div className="circle rock">
-        <img className="icons" src={rock} alt="rock" />
-      </div>
+      {!select ?
+        <>
+          <div className="circle paper" onClick={()=>setselect("paper")}>
+            <img className="icons" src={paper}  alt="paper" />
+          </div>
+          <div className="circle scissors" onClick={()=>{setselect("scissors")}}>
+            <img className="icons" src={scissors} alt="scissors" />
+          </div>
+          <div className="circle rock" onClick={()=>{setselect("rock")}}>
+            <img className="icons" src={rock}  alt="rock" />
+          </div> 
+        </>:
+        <>
+          <div className={`circle ${select}`}>
+            {console.log(`../../images/icon-${select}.svg`)}
+            <img className="icons" src={`../../images/icon-${select}.svg`}  alt={select} />
+          </div>
+          <div className="circle scissors" >
+            <img className="icons" src={scissors} alt="scissors" />
+          </div>
+        </>
+      }
     </section>
   )
 }
