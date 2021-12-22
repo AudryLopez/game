@@ -28,12 +28,12 @@ export default function game(){
     } else {
       myresult = "YOU WIN";
     }
-    return({ myresult, number})
+    return({ myresult, number })
   } 
 
   useEffect(()=>{
     if(select){
-      const { myresult, number} = resulted(select);
+      const { myresult, number } = resulted(select);
       seseleted(number);
       setresult(myresult);
     }
@@ -52,9 +52,9 @@ export default function game(){
           <div className="circle rock" onClick={()=>{setselect("rock")}}>
             <img className="icons" src={rock}  alt="rock" />
           </div> 
-        </>:
+        </>
+        :
         <>
-          {console.log(result)}
           <div className={`circle ${select}`}>
             <img className="icons" src={types[`${select}`]}  alt={select} />
           </div>
