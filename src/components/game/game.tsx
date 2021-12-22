@@ -4,21 +4,44 @@ import { useState, useEffect } from "react";
 import rock from "../../images/icon-rock.svg";
 import paper from "../../images/icon-paper.svg";
 import scissors from "../../images/icon-scissors.svg";
+import "../index/logic.js";
 
-export default function Game(){
+export default function game(){
   const [score, setscore] = useState(0);
+  const [seleted, seseleted] = useState<string>();
   const [result, setresult] = useState<string>();
   const [select, setselect] = useState<string>();
-  const options = ["paper", "scissors", "rock"];
+  const types:any = { rock, paper, scissors };
+  
+  function resulted(seleted:string){
+    const rules = {
+      paper: "rock" ,
+      scissors: "paper" ,
+      rock: "scissors" 
+    }
+    const answer = ["paper", "scissors", "rock"];
+    const number = answer[Math.floor(Math.random() * 3)];
+    let myresult: string = "";
 
+    if (seleted === number) {
+      myresult = "YOU LOSE";
+    } else {
+      myresult = "YOU WIN";
+    }
+    return({ myresult, number})
+  } 
 
   useEffect(()=>{
-
-  })
+    if(select){
+      const { myresult, number} = resulted(select);
+      seseleted(number);
+      setresult(myresult);
+    }
+  });
 
   return(
     <section className="container">
-      {!select ?
+      {!result ?
         <>
           <div className="circle paper" onClick={()=>setselect("paper")}>
             <img className="icons" src={paper}  alt="paper" />
@@ -31,12 +54,12 @@ export default function Game(){
           </div> 
         </>:
         <>
+          {console.log(result)}
           <div className={`circle ${select}`}>
-            {console.log(`../../images/icon-${select}.svg`)}
-            <img className="icons" src={`../../images/icon-${select}.svg`}  alt={select} />
+            <img className="icons" src={types[`${select}`]}  alt={select} />
           </div>
-          <div className="circle scissors" >
-            <img className="icons" src={scissors} alt="scissors" />
+          <div className={`circle ${seleted}`} >
+            <img className="icons" src={types[`${seleted}`]} alt={seleted} />
           </div>
         </>
       }

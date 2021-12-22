@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../header/header";
 import Rules from "../rules/rules";
-import Game from "../game/game";
+import Game from "../game/game"
 import { useState } from "react";
 import "./index.css";
 
 export default function index(){
-    const [visible, invisible] = useState(true);
+    const [visible, invisible] = useState(false);
 
     return(
       <section className="main">
