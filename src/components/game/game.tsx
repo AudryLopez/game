@@ -42,7 +42,7 @@ export default function game(){
   return(
     <section className="container">
       {!result ?
-        <>
+        <section className="select">
           <div className="circle paper" onClick={()=>setselect("paper")}>
             <img className="icons" src={paper}  alt="paper" />
           </div>
@@ -52,16 +52,16 @@ export default function game(){
           <div className="circle rock" onClick={()=>{setselect("rock")}}>
             <img className="icons" src={rock}  alt="rock" />
           </div> 
-        </>
+        </section>
         :
-        <>
+        <section className="results">
           <div className={`circle ${select}`}>
             <img className="icons" src={types[`${select}`]}  alt={select} />
           </div>
           <div className={`circle ${seleted}`} >
             <img className="icons" src={types[`${seleted}`]} alt={seleted} />
           </div>
-        </>
+        </section>
       }
     </section>
   )
