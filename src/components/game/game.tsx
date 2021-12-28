@@ -23,12 +23,11 @@ export default function game(){
     const number = answer[Math.floor(Math.random() * 3)];
     let myresult: string = "";
 
-    if (seleted === number) {
-      myresult = "YOU LOSE";
+    if (number === seleted) {
+      return({myresult: "YOU WIN", number});
     } else {
-      myresult = "YOU WIN";
+      return({myresult: "YOU LOSE", number});
     }
-    return({ myresult, number })
   } 
 
   useEffect(()=>{
@@ -36,6 +35,7 @@ export default function game(){
       const { myresult, number } = resulted(select);
       seseleted(number);
       setresult(myresult);
+      console.log(myresult)
     }
   });
 
