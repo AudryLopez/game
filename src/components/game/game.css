@@ -8,6 +8,11 @@
   min-width: 100%;
 }
 
+.select {
+  display: flex;
+  flex-direction: column;
+}
+
 .circle {
   display: flex;
   justify-content: center;
@@ -21,17 +26,28 @@
 
 .circle.rock {
   border: 20px solid hsl(349, 71%, 52%);
+  grid-area:auto;
 }
 
 .circle.paper {
-  border: 20px solid hsl(230, 89%, 62%); 
+  border: 20px solid hsl(230, 89%, 62%);
+  grid-area: "paper"; 
 }
 
 .circle.scissors {
   border: 20px solid hsl(39, 89%, 49%);  
+  grid-area: "scissors";
 }
 
 .icons {
   height: 80px;
   width: 80px;
 }
+
+.results {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 65px;
+}
+
