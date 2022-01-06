@@ -10,9 +10,14 @@ export default function game(){
   const [score, setscore] = useState(0);
   const [seleted, seseleted] = useState<string>();
   const [result, setresult] = useState<string>();
-  const [select, setselect] = useState<string>();
+  const [select, setselect] = useState<any>();
+  const [show, setshow] = useState<boolean>(true);
   const types:any = { rock, paper, scissors };
-  
+
+  const myshow = () =>{
+    setselect(false);
+    setshow(true);
+  }  
   function resulted(seleted:string){
     const rules = {
       paper: "rock" ,
@@ -35,13 +40,13 @@ export default function game(){
       const { myresult, number } = resulted(select);
       seseleted(number);
       setresult(myresult);
-      console.log(myresult)
+      setshow(false);
     }
   });
 
   return(
     <section className="container">
-      {!result ?
+      {show ?
         <section className="select">
           <div className="circle paper" onClick={()=>setselect("paper")}>
             <img className="icons" src={paper}  alt="paper" />
@@ -61,6 +66,7 @@ export default function game(){
           <div className={`circle ${seleted}`} >
             <img className="icons" src={types[`${seleted}`]} alt={seleted} />
           </div>
+          <button className="again" onClick={myshow}>Play Again</button>
         </section>
       }
     </section>
